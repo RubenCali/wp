@@ -1,15 +1,13 @@
+<?php get_header(); ?>
+    
 <?php
     if( have_posts()):
         while(have_posts()) : the_post(); ?>
-            <h3><?php the_title(); ?></h3>
+            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <div><?php the_content(); ?></div>
-            <?php
-        endwhile;
-
-        else: ?>
+            <div><?php the_excerpt(); ?></div>
+            
+            <?php endwhile; else: ?>
     <p>geen berichten gevonden</p>
-    <?php
-
-    endif;
-
-?>
+    <?php endif; ?>
+<?php get_footer(); ?>
