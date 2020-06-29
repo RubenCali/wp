@@ -19,7 +19,7 @@
     <a class="navbar-brand" href="#">Wat Ruben weet</a>
         <?php
         wp_nav_menu( array(
-            'theme_location'    => 'hoofdmenu',
+            'theme_location'    => 'hoofd-menu',
             'depth'             => 2,
             'container'         => 'div',
             'container_class'   => 'collapse navbar-collapse',
@@ -29,10 +29,13 @@
             'walker'            => new WP_Bootstrap_Navwalker(),
         ) );
         ?>
+ <a href="<?php echo home_url(); ?>">
+    <img src="<?php echo get_template_directory_uri() . '/img/logo.PNG' ?>" alt="logo Ruben" style="border-radius: 24px; width:50px;">
+        </a>
     </div>
 </nav>
 
-    <div class="jumbotron">
+<div class="jumbotron" style="background-image: url(<?php echo get_template_directory_uri() . '/img/strand.jpg' ?>)">
 <h1 class="display-4"><a href="<?php echo home_url(); ?>"><?php bloginfo('name') ?></a></h1>
 <p class="lead"><?php bloginfo('description') ?></p>
 </div>
